@@ -1,0 +1,87 @@
+---
+alwaysApply: true
+---
+
+# Cursor Rule: Verify Every Change (Build / DB / API)
+
+You MUST verify the impact of any code/config change you make before you consider the task complete.
+
+## 1) Definition of "verification"
+Verification means running the most relevant automated checks available for the kind of change you made, and reporting the results (pass/fail + any output needed to understand failures).
+
+You are not allowed to say "should work" or "looks good" without running checks.
+
+## 2) Minimum verification requirements (always do these)
+After any change:
+- Run a typecheck/lint check if present
+- Run a build check if present
+
+Preferred order:
+1) `npm run lint` (or `pnpm lint` / `yarn lint`)
+2) `npm run typecheck` (or `tsc -p . --noEmit` if available)
+3) `npm run build`
+
+If a script doesn’t exist, pick the closest equivalent and explain what you ran.
+
+## 3) Change-specific verification
+### Frontend/UI changes
+- `npm run build`
+- If tests exist: `npm test` / `npm run test`
+- If e2e exists: run the smallest relevant e2e spec
+
+### Backend/API changes
+- `npm run build` (or backend build)
+- Run unit/integration tests if present
+- Make at least one safe local request (curl/Postman) that hits the changed endpoint (read-only preferred)
+
+### Next.js (this repo)
+- Always run: `npm run build`
+- If using env vars: confirm required vars exist (do NOT print secrets)
+
+### Database/Supabase changes
+You MAY perform ONLY non-destructive checks. Allowed:
+- `SELECT ... LIMIT ...`
+- `EXPLAIN` / `EXPLAIN ANALYZE`
+- `COUNT(*)`, `MAX`, `MIN`
+- Checking constraints/indexes via system catalogs
+- Verifying RLS policies by reading definitions
+- Read-only RPC calls that do not mutate data
+
+Not allowed under any circumstances:
+- `DROP`, `TRUNCATE`, `DELETE`, `UPDATE`, `INSERT`
+- `ALTER TABLE` / migrations applied directly to prod
+- Any query that mutates data, even if "small"
+- Turning off RLS, changing auth settings, or modifying policies
+
+If verification would require destructive changes, STOP and propose a safe alternative (staging DB, transaction rollback plan, or read-only validation).
+
+## 4) API calls (external services)
+- Prefer dry-run / sandbox endpoints where possible
+- Only perform non-destructive, read-only calls unless the user explicitly requests a write operation and provides confirmation
+- Never spam endpoints; one minimal call to validate behavior is enough
+
+## 5) Reporting format (required)
+At the end of your response, include a "Verification" section:
+
+- Commands run:
+  - ...
+- Result:
+  - PASS/FAIL
+- If FAIL:
+  - What failed
+  - The most likely cause
+  - The exact next step(s) to fix
+
+## 6) If you cannot run commands
+If you do not have access to run commands in the current environment:
+- Say you cannot execute them here
+- Provide the exact commands the user should run
+- Predict the most likely failure modes to watch for
+- Do NOT claim verification passed
+
+## 7) No regressions policy
+If verification fails, you must either:
+- Fix it and re-run verification, OR
+- Revert the change and explain why
+
+Do not leave the code in a broken state.

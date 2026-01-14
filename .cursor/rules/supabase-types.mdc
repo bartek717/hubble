@@ -1,0 +1,16 @@
+---
+description: Always use generated Supabase database types.
+---
+
+# Supabase database types
+
+- Always use the generated types from `supabase/database.types.ts` when creating
+  or using a Supabase client.
+- Do not hand-write table/row types that duplicate the generated schema.
+- If types are missing or outdated, run `npm run db:sync` to pull schema and
+  regenerate types.
+- If `db:sync` is slow or fails, prefer `npm run db:types` (or
+  `npx supabase gen types typescript --linked`) after ensuring the project is
+  linked via `npx supabase link --project-ref <ref>`.
+- After regeneration, update imports to use:
+  `import type { Database } from "@/supabase/database.types";`

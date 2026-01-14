@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const STORAGE_KEY = "hubble-theme";
 const COOKIE_KEY = "hubble-theme";
@@ -14,11 +14,7 @@ const getInitialTheme = () => {
 };
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
-
-  useEffect(() => {
-    setTheme(getInitialTheme());
-  }, []);
+  const [theme, setTheme] = useState<"dark" | "light">(() => getInitialTheme());
 
   const toggleTheme = () => {
     const next = theme === "dark" ? "light" : "dark";
