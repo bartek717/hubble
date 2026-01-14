@@ -23,10 +23,16 @@ export default function MarketingHome() {
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
-              href="/app/explore"
+              href="/sign-in"
               className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-soft hover:opacity-90"
             >
-              Explore events
+              Sign in
+            </Link>
+            <Link
+              href="/sign-up"
+              className="rounded-full border border-border bg-surface/70 px-6 py-3 text-sm font-semibold text-fg/90 hover:bg-card"
+            >
+              Create an account
             </Link>
             <Link
               href="/pricing"

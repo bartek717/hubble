@@ -1,3 +1,4 @@
+import AccountAuthCard from "../../../components/account-auth-card";
 import PageShell from "../../../components/page-shell";
 import Card from "../../../components/ui/card";
 
@@ -5,12 +6,7 @@ export default function AccountPage() {
   return (
     <PageShell title="Account" description="Invite-only MVP access and billing details.">
       <div className="grid gap-6 md:grid-cols-2">
-        <Card className="flex flex-col gap-2">
-          <p className="text-xs uppercase tracking-[0.2em] text-muted">Profile</p>
-          <h3 className="text-lg font-semibold">Account</h3>
-          <p className="text-sm text-muted">bartek@hubble.app</p>
-          <span className="text-xs text-muted">Role: Analyst</span>
-        </Card>
+        <AccountAuthCard />
         <Card className="flex flex-col gap-2">
           <p className="text-xs uppercase tracking-[0.2em] text-muted">Billing</p>
           <h3 className="text-lg font-semibold">Stripe portal</h3>
