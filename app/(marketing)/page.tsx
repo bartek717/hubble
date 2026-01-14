@@ -7,34 +7,44 @@ export default function MarketingHome() {
 
   return (
     <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 py-12">
-      <section className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+      <section className="relative overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-card via-surface to-bg p-8 shadow-soft lg:p-12">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),_transparent_55%)]" />
+        <div className="relative grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="flex flex-col gap-6">
-          <p className="text-xs uppercase tracking-[0.25em] text-muted">Event Expectations</p>
-          <h1 className="text-4xl font-semibold leading-tight">
+          <p className="text-xs uppercase tracking-[0.35em] text-muted">
+            Event Expectations
+          </p>
+          <h1 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
             Turn major world events into probability-aware market expectations.
           </h1>
-          <p className="text-lg text-muted">
+          <p className="text-lg text-muted md:text-xl">
             Hubble blends prediction market odds, market proxies, and narrative
             triggers into a clear Expected Move view for retail investors.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
               href="/app/explore"
-              className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:opacity-90"
+              className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-soft hover:opacity-90"
             >
               Explore events
             </Link>
             <Link
               href="/pricing"
-              className="rounded-full border border-border px-6 py-3 text-sm font-semibold text-fg/90 hover:bg-surface"
+              className="rounded-full border border-border bg-surface/70 px-6 py-3 text-sm font-semibold text-fg/90 hover:bg-card"
             >
               See pricing
             </Link>
           </div>
           <div className="flex flex-wrap gap-4 text-sm text-muted">
-            <span>Odds × Impact → Expected Move</span>
-            <span>Alerts when odds move</span>
-            <span>Downloadable pack brief</span>
+            <span className="rounded-full border border-border bg-surface px-3 py-1">
+              Odds × Impact → Expected Move
+            </span>
+            <span className="rounded-full border border-border bg-surface px-3 py-1">
+              Alerts when odds move
+            </span>
+            <span className="rounded-full border border-border bg-surface px-3 py-1">
+              Downloadable pack brief
+            </span>
           </div>
         </div>
         <Card>
@@ -58,6 +68,7 @@ export default function MarketingHome() {
             </div>
           </div>
         </Card>
+        </div>
       </section>
 
       <section className="grid gap-6 md:grid-cols-3">
@@ -76,6 +87,7 @@ export default function MarketingHome() {
           },
         ].map((feature) => (
           <Card key={feature.title} className="flex flex-col gap-3">
+            <p className="text-xs uppercase tracking-wide text-muted">Core module</p>
             <h3 className="text-lg font-semibold">{feature.title}</h3>
             <p className="text-sm text-muted">{feature.description}</p>
           </Card>

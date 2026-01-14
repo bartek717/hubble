@@ -32,7 +32,7 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm font-medium text-fg/90 shadow-soft transition hover:bg-card"
+      className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-fg/90 shadow-soft transition hover:bg-surface"
     >
       <span className="h-2 w-2 rounded-full bg-primary" />
       {theme === "dark" ? "Dark mode" : "Light mode"}

@@ -1,12 +1,13 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { events } from "../../../../lib/mock-data";
 
 type Context = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
-export async function GET(_: Request, { params }: Context) {
-  const event = events.find((item) => item.slug === params.slug);
+export async function GET(_: NextRequest, { params }: Context) {
+  const { slug } = await params;
+  const event = events.find((item) => item.slug === slug);
 
   if (!event) {
     return NextResponse.json({ error: "Event not found." }, { status: 404 });
