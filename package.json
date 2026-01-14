@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:pull": "npx supabase db pull",
+    "db:types": "npx supabase gen types typescript > supabase/database.types.ts",
+    "db:sync": "npm run db:pull && npm run db:types"
   },
   "dependencies": {
     "@supabase/ssr": "^0.8.0",
