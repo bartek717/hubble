@@ -44,16 +44,19 @@ export type Database = {
           created_at: string
           email: string | null
           id: string
+          signup_method: string | null
         }
         Insert: {
           created_at?: string
           email?: string | null
           id: string
+          signup_method?: string | null
         }
         Update: {
           created_at?: string
           email?: string | null
           id?: string
+          signup_method?: string | null
         }
         Relationships: []
       }
@@ -62,7 +65,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_signup_method: { Args: { input_email: string }; Returns: string }
     }
     Enums: {
       [_ in never]: never
