@@ -14,7 +14,8 @@ export default function WatchlistPage() {
           <Card key={event.slug} className="flex flex-col gap-4">
             <div className="flex items-center justify-between gap-4">
               <div>
-                <h3 className="text-lg font-semibold">{event.title}</h3>
+                <p className="text-xs uppercase tracking-[0.2em] text-muted">Watch</p>
+                <h3 className="text-lg font-semibold tracking-tight">{event.title}</h3>
                 <p className="text-sm text-muted">{event.description}</p>
               </div>
               <ProbabilityPill probability={event.probability} delta={event.delta} />

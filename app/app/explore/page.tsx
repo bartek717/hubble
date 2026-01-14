@@ -9,10 +9,10 @@ export default function ExplorePage() {
       description="Trending event expectations with probability-aware market impact."
       actions={
         <div className="flex items-center gap-3">
-          <button className="rounded-full border border-border bg-surface px-4 py-2 text-xs font-semibold text-fg/80">
+          <button className="rounded-full border border-border bg-card/80 px-4 py-2 text-xs font-semibold text-fg/80 hover:bg-surface">
             Filters
           </button>
-          <button className="rounded-full border border-border bg-surface px-4 py-2 text-xs font-semibold text-fg/80">
+          <button className="rounded-full border border-border bg-card/80 px-4 py-2 text-xs font-semibold text-fg/80 hover:bg-surface">
             Sort: Trending
           </button>
         </div>

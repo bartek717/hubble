@@ -30,6 +30,7 @@ export default function AdminAnalogsPage() {
       <div className="grid gap-4">
         {analogs.map((analog) => (
           <Card key={analog.title} className="flex flex-col gap-2">
+            <p className="text-xs uppercase tracking-[0.2em] text-muted">Analog</p>
             <h3 className="text-base font-semibold">{analog.title}</h3>
             <p className="text-sm text-muted">{analog.note}</p>
           </Card>

@@ -4,11 +4,11 @@ type ProbabilityPillProps = {
 };
 
 const getTone = (probability: number) => {
-  if (probability >= 0.75) return "bg-prob-4/20 text-prob-4 border-prob-4/30";
-  if (probability >= 0.6) return "bg-prob-3/20 text-prob-3 border-prob-3/30";
-  if (probability >= 0.45) return "bg-prob-2/20 text-prob-2 border-prob-2/30";
-  if (probability >= 0.3) return "bg-prob-1/20 text-prob-1 border-prob-1/30";
-  return "bg-prob-0/40 text-muted border-border";
+  if (probability >= 0.75) return "bg-prob-4/25 text-prob-4 border-prob-4/40";
+  if (probability >= 0.6) return "bg-prob-3/25 text-prob-3 border-prob-3/40";
+  if (probability >= 0.45) return "bg-prob-2/25 text-prob-2 border-prob-2/40";
+  if (probability >= 0.3) return "bg-prob-1/25 text-prob-1 border-prob-1/40";
+  return "bg-prob-0/50 text-muted border-border";
 };
 
 const formatDelta = (delta?: number) => {
@@ -20,7 +20,7 @@ const formatDelta = (delta?: number) => {
 export default function ProbabilityPill({ probability, delta }: ProbabilityPillProps) {
   return (
     <div
-      className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wide ${getTone(
+      className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] ${getTone(
         probability,
       )}`}
     >

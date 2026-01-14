@@ -5,8 +5,8 @@ export default function PricingPage() {
   return (
     <div className="mx-auto flex w-full max-w-5xl flex-col gap-10 px-6 py-12">
       <div className="space-y-3">
-        <p className="text-xs uppercase tracking-[0.25em] text-muted">Pricing</p>
-        <h1 className="text-3xl font-semibold">Event Expectations Pack</h1>
+        <p className="text-xs uppercase tracking-[0.35em] text-muted">Pricing</p>
+        <h1 className="text-3xl font-semibold tracking-tight">Event Expectations Pack</h1>
         <p className="text-sm text-muted">
           $10 per event pack. Unlock the premium brief plus live updates and
           alerts.
@@ -15,6 +15,7 @@ export default function PricingPage() {
 
       <div className="grid gap-6 md:grid-cols-2">
         <Card className="flex flex-col gap-4">
+          <p className="text-xs uppercase tracking-[0.2em] text-muted">Plan</p>
           <h2 className="text-2xl font-semibold">$10</h2>
           <p className="text-sm text-muted">Per event pack</p>
           <ul className="space-y-2 text-sm text-muted">
@@ -31,6 +32,7 @@ export default function PricingPage() {
           </Link>
         </Card>
         <Card className="flex flex-col gap-4">
+          <p className="text-xs uppercase tracking-[0.2em] text-muted">Flow</p>
           <h3 className="text-lg font-semibold">Checkout flow</h3>
           <p className="text-sm text-muted">
             Stripe Checkout handles payment. A webhook unlocks the pack and

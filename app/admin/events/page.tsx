@@ -19,12 +19,13 @@ export default function AdminEventsPage() {
           <Card key={event.slug} className="flex flex-col gap-2">
             <div className="flex items-center justify-between gap-4">
               <div>
+                <p className="text-xs uppercase tracking-[0.2em] text-muted">Event</p>
                 <h3 className="text-base font-semibold">{event.title}</h3>
                 <p className="text-sm text-muted">{event.slug}</p>
               </div>
               <Link
                 href={`/admin/events/${event.slug}`}
-                className="rounded-full border border-border bg-surface px-3 py-1 text-xs font-semibold text-fg/80"
+                className="rounded-full border border-border bg-card/80 px-3 py-1 text-xs font-semibold text-fg/80 hover:bg-surface"
               >
                 Edit
               </Link>

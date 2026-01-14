@@ -23,6 +23,7 @@ export default function AlertsPage() {
       <div className="grid gap-4">
         {alerts.map((alert) => (
           <Card key={alert.title} className="flex flex-col gap-2">
+            <p className="text-xs uppercase tracking-[0.2em] text-muted">Alert</p>
             <h3 className="text-base font-semibold">{alert.title}</h3>
             <p className="text-sm text-muted">{alert.detail}</p>
             <span className="text-xs text-muted">{alert.time}</span>

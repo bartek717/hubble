@@ -13,7 +13,7 @@ export default function EventCard({ event }: EventCardProps) {
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="text-xs uppercase tracking-wide text-muted">Event</p>
-          <h3 className="text-lg font-semibold">{event.title}</h3>
+          <h3 className="text-lg font-semibold tracking-tight">{event.title}</h3>
         </div>
         <ProbabilityPill probability={event.probability} delta={event.delta} />
       </div>
@@ -28,8 +28,8 @@ export default function EventCard({ event }: EventCardProps) {
           </span>
         ))}
       </div>
-      <div className="rounded-xl border border-border bg-surface p-4">
-        <p className="text-xs uppercase tracking-wide text-muted">
+      <div className="rounded-xl border border-border bg-surface/70 p-4">
+        <p className="text-xs uppercase tracking-[0.2em] text-muted">
           Expected move (median)
         </p>
         <p className="text-lg font-semibold">

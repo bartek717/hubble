@@ -21,6 +21,7 @@ export default function AdminBasketsPage() {
       <div className="grid gap-4">
         {baskets.map((basket) => (
           <Card key={basket.name} className="flex flex-col gap-2">
+            <p className="text-xs uppercase tracking-[0.2em] text-muted">Basket</p>
             <h3 className="text-base font-semibold">{basket.name}</h3>
             <p className="text-sm text-muted">Proxies: {basket.proxies.join(", ")}</p>
           </Card>

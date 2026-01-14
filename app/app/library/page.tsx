@@ -20,7 +20,8 @@ export default function LibraryPage() {
       <div className="grid gap-6 lg:grid-cols-2">
         {events.map((event) => (
           <Card key={event.slug} className="flex flex-col gap-3">
-            <h3 className="text-lg font-semibold">{event.title}</h3>
+            <p className="text-xs uppercase tracking-[0.2em] text-muted">Pack</p>
+            <h3 className="text-lg font-semibold tracking-tight">{event.title}</h3>
             <p className="text-sm text-muted">{event.description}</p>
             <div className="flex flex-wrap gap-2 text-xs text-muted">
               <span className="rounded-full border border-border bg-surface px-3 py-1">
