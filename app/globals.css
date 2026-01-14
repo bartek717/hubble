@@ -40,8 +40,14 @@ html.dark {
     @apply border-border;
   }
 
+  html,
+  body {
+    height: 100%;
+  }
+
   body {
     @apply bg-bg text-fg antialiased;
+    overscroll-behavior-y: none;
   }
 
   a {
