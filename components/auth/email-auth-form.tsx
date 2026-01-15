@@ -85,7 +85,7 @@ export default function EmailAuthForm({ submitLabel, mode, redirectPath }: Email
       <button
         type="submit"
         disabled={isSubmitting}
-        className="inline-flex w-fit rounded-full border border-border bg-surface px-4 py-2 text-xs font-semibold text-fg/80 hover:bg-card disabled:opacity-60"
+        className="inline-flex w-full items-center justify-center rounded-full border border-border bg-surface px-4 py-2 text-xs font-semibold text-fg/80 hover:bg-card disabled:opacity-60"
       >
         {isSubmitting ? "Sending code…" : submitLabel}
       </button>

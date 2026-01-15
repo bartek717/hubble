@@ -14,13 +14,7 @@ export default function SignInPage() {
           Sign in with Google, a password, or a one-time login code.
         </p>
       </div>
-      <Card className="flex w-full max-w-md flex-col gap-4 text-left">
-        <GoogleAuthButton label="Continue with Google" />
-        <div className="flex items-center gap-3 text-xs text-muted">
-          <span className="h-px flex-1 bg-border" />
-          <span>or</span>
-          <span className="h-px flex-1 bg-border" />
-        </div>
+      <Card className="flex w-full max-w-md flex-col items-stretch gap-4 text-center">
         <PasswordAuthForm mode="sign-in" submitLabel="Sign in with password" />
         <div className="flex flex-col gap-2 border-t border-border pt-4">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted">
@@ -28,6 +22,12 @@ export default function SignInPage() {
           </p>
           <EmailAuthForm mode="sign-in" submitLabel="Email me a login code" />
         </div>
+        <div className="flex items-center gap-3 text-xs text-muted">
+          <span className="h-px flex-1 bg-border" />
+          <span>or</span>
+          <span className="h-px flex-1 bg-border" />
+        </div>
+        <GoogleAuthButton label="Continue with Google" />
         <p className="text-sm text-muted">
           Don&apos;t have an account?{" "}
           <Link href="/sign-up" className="font-semibold text-fg hover:underline">
